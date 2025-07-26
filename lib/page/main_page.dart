@@ -85,7 +85,7 @@ class _MainScaffoldPageState extends ConsumerState<MainScaffoldPage> {
         onDownloadResume: onDownloadResume,
       ),
       body: responsive.responsiveValue(
-        mobile: const MobilePage(),
+        mobile:  MobilePage(contentPage: widget.contentPage,),
         desktop: TabletDesktopPage(
           profileWidget:  ProfilePage(onChangedIndex: (route) => onChangedIndex(route: route),selectedNavBarIndex: navBarIndex,),
           contentWidget: widget.contentPage,
