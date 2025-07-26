@@ -10,18 +10,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ContentView(
-      child: Column(
-        children: [
-          Text('HomePage',style: context.largeTextStyle,),
-          Container(
-            height: 200,
+    return Column(
+      children: [
+        Text('HomePage',style: context.largeTextStyle,),
+        Container(
+          height: 200,
 
-            width: double.infinity,
-            color: Colors.cyanAccent,
-          )
-        ],
-      ),
+          width: double.infinity,
+          color: Colors.cyanAccent,
+        )
+      ],
     );
   }
 }

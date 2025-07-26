@@ -14,27 +14,14 @@ import '../../route/route_enum.dart';
 import '../widgets/content_view.dart';
 
 class ProfilePage extends ConsumerWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({super.key,required this.onChangedIndex,required this.selectedNavBarIndex });
+  final Function( RouteEnum route ) onChangedIndex;
+  final int selectedNavBarIndex;
 
-  void onChangedIndex({required RouteEnum route,required BuildContext context,required WidgetRef ref}) {
-    ref.read(navBarProvider.notifier).update((state) => route.index);
-    switch (route) {
-      case RouteEnum.home:
-        context.goNamed(RouteEnum.home.name);
-
-      case RouteEnum.resume:
-        context.goNamed(RouteEnum.resume.name);
-
-      case RouteEnum.work:
-        context.goNamed(RouteEnum.work.name);
-      case RouteEnum.contact:
-        context.goNamed(RouteEnum.contact.name);
-    }
-  }
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final iconSize = context.defaultResponsive(mobile: 12,tablet: 18,desktop: 20);
-    final navBarIndex = ref.watch(navBarProvider);
+
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: AppPadding.defaultPadding),
       child: Column(
@@ -88,44 +75,45 @@ class ProfilePage extends ConsumerWidget {
                 GeneralButton(
                   color: Theme.of(context).cardTheme.color,
                   isExpanded: true,
-                  isSelected: navBarIndex == RouteEnum.home.index,
+                  isSelected: selectedNavBarIndex == RouteEnum.home.index,
                   borderRadius: 12,
                   child: Icon(FontAwesomeIcons.house,size: iconSize,),
 
                   onPressed: () {
-                    onChangedIndex(route: RouteEnum.home, context: context, ref: ref);
+                    onChangedIndex( RouteEnum.home,);
                   },
                 ),
                 GeneralButton(
                   color: Theme.of(context).cardTheme.color,
                   isExpanded: true,
-                  isSelected: navBarIndex == RouteEnum.resume.index,
+                  isSelected: selectedNavBarIndex == RouteEnum.resume.index,
                   borderRadius: 12,
                   child: Icon(FontAwesomeIcons.newspaper,size: iconSize,),
                   onPressed: () {
-                    onChangedIndex(route: RouteEnum.resume, context: context,ref: ref);
+                    onChangedIndex( RouteEnum.resume,);
+
                   },
                 ),
                 GeneralButton(
                   isExpanded: true,
                   color: Theme.of(context).cardTheme.color,
-                  isSelected: navBarIndex == RouteEnum.work.index,
+                  isSelected: selectedNavBarIndex == RouteEnum.work.index,
                   borderRadius: 12,
                   child: Icon(FontAwesomeIcons.briefcase,size: iconSize,),
 
                   onPressed: () {
-                    onChangedIndex(route: RouteEnum.work, context: context,ref: ref);
+                    onChangedIndex( RouteEnum.work,);
                   },
                 ),
                 GeneralButton(
                   isExpanded: true,
                   color: Theme.of(context).cardTheme.color,
-                  isSelected: navBarIndex == RouteEnum.contact.index,
+                  isSelected: selectedNavBarIndex == RouteEnum.contact.index,
                   borderRadius: 12,
                   child: Icon(FontAwesomeIcons.addressBook,size: iconSize,),
 
                   onPressed: () {
-                    onChangedIndex(route: RouteEnum.contact, context: context,ref: ref);
+                    onChangedIndex( RouteEnum.contact,);
                   },
                 ),
               ],

@@ -6,12 +6,12 @@ import '../../../core/utils/app_images.dart';
 import '../../../core/utils/app_value.dart';
 
 class ProfileImage extends StatelessWidget {
-  const ProfileImage({super.key});
-
+  const ProfileImage({super.key,this.constraints});
+  final BoxConstraints? constraints;
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints(
+      constraints: constraints ?? const BoxConstraints(
           minHeight: 100,
           minWidth: 100,
           maxHeight: 200,

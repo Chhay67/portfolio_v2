@@ -12,6 +12,7 @@ class GeneralButton extends StatelessWidget {
     this.borderRadius = AppRadius.medium,
     this.isSelected = false,
     this.isExpanded = false,
+    this.isFullWidth = false,
   });
 
   final Function()? onPressed;
@@ -24,6 +25,7 @@ class GeneralButton extends StatelessWidget {
   final bool isSelected;
 
   final bool isExpanded;
+  final bool isFullWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,9 @@ class GeneralButton extends StatelessWidget {
        ),
      );
     if (!isExpanded) {
+      if(isFullWidth){
+        return SizedBox(width: double.maxFinite,child: widget,);
+      }
       return widget;
     }
     return Expanded(child: widget);
