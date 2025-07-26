@@ -9,11 +9,9 @@ import 'package:portfolio_v2/core/utils/app_value.dart';
 import 'package:portfolio_v2/page/mobile_page/widgets/drawer_item.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/profile.dart';
 
-import '../../core/provider/nav_bar_provider.dart';
 import '../../route/route_enum.dart';
 import '../tablet_desktop_page/widgets/general_button.dart';
 import '../tablet_desktop_page/widgets/social_media_buttons.dart';
-import '../widgets/content_view.dart';
 
 class DrawerPage extends ConsumerWidget with ValueMixin{
   const DrawerPage({super.key,required this.onThemeChange,required this.onClickDrawer,required this.onChangedIndex,required this.selectedNavBarIndex});

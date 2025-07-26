@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/contact_item.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/general_button.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/profile.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/social_media_buttons.dart';
-import '../../core/provider/nav_bar_provider.dart';
 import '../../core/utils/app_fonts.dart';
 import '../../core/utils/app_value.dart';
 import '../../route/route_enum.dart';

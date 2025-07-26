@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 
-import '../widgets/content_card.dart';
 
 class ResumePage extends StatelessWidget {
   const ResumePage({super.key});

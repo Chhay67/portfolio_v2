@@ -1,9 +1,5 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
-import 'package:portfolio_v2/page/widgets/content_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

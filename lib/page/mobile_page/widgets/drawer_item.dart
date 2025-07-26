@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/cupertino.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 
 class DrawerItem extends StatelessWidget {
