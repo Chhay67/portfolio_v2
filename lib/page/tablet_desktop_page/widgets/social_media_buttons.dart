@@ -11,10 +11,12 @@ class SocialMediaButtons extends StatelessWidget {
     required this.onTelegramPressed,
     required this.onLinkedInPressed,
     required this.onGitHubPressed,
+    this.color,
   });
   final Function() onTelegramPressed;
   final Function() onLinkedInPressed;
   final Function() onGitHubPressed;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -22,16 +24,19 @@ class SocialMediaButtons extends StatelessWidget {
       spacing: AppSpacer.defaultSpacer,
       children: [
         GeneralButton(
+          color: color,
           onPressed: onTelegramPressed,
-          child: Icon(FontAwesomeIcons.telegram),
+          child: const Icon(FontAwesomeIcons.telegram),
         ),
         GeneralButton(
+          color: color,
           onPressed: onLinkedInPressed,
-          child: Icon(FontAwesomeIcons.linkedin),
+          child: const Icon(FontAwesomeIcons.linkedin),
         ),
         GeneralButton(
+          color: color,
           onPressed: onGitHubPressed,
-          child: Icon(FontAwesomeIcons.github),
+          child: const Icon(FontAwesomeIcons.github),
         ),
 
       ],

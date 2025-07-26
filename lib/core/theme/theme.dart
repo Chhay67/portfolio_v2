@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show ThemeData, TextTheme, TextStyle, FontWeight, ColorScheme, CardThemeData, BorderRadius, RoundedRectangleBorder, IconButtonThemeData, IconButton, AppBarTheme;
+    show AppBarTheme, CardThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData;
 import 'package:portfolio_v2/core/theme/shape.dart';
 
 import '../utils/app_fonts.dart';
@@ -20,7 +20,9 @@ class AppThemes {
       shape: AppShapes.roundedRectangleBorder,
       elevation: 1,
     ),
-
+    drawerTheme: const DrawerThemeData(
+      backgroundColor:  AppColors.lightBackground,
+    ),
     appBarTheme: const AppBarTheme(
       color: AppColors.lightBackground,
       actionsIconTheme:  IconThemeData(
@@ -57,6 +59,9 @@ class AppThemes {
     useMaterial3: true,
     fontFamily: AppFonts.raleWay,
     scaffoldBackgroundColor: AppColors.darkBackground,
+    drawerTheme: const DrawerThemeData(
+      backgroundColor:  AppColors.darkBackground,
+    ),
     textTheme: darkTextTheme,
     cardColor: AppColors.darkBackground,
     cardTheme: CardThemeData(

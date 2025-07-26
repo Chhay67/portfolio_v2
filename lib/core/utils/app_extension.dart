@@ -18,7 +18,7 @@ extension ContextExtension on BuildContext {
   }
 
 
-  double  defaultResponsive({double mobile = 12, double tablet = 24, double desktop = 80}) {
+  double  defaultResponsive({double mobile = 16, double tablet = 24, double desktop = 80}) {
     final responsive = ResponsiveUtil(this);
     switch(responsive.deviceType) {
       case DeviceType.mobile:

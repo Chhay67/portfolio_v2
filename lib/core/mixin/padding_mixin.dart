@@ -10,11 +10,11 @@ mixin ValueMixin{
     final responsive = ResponsiveUtil(context);
     switch(responsive.deviceType) {
       case DeviceType.mobile:
-        return 12;
+        return 16;
       case DeviceType.tablet:
-        return 32;
+        return 22;
       case DeviceType.desktop:
-        return 42;
+        return 32;
     }
   }
 }
