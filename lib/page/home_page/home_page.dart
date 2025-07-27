@@ -28,20 +28,20 @@ class HomePage extends StatelessWidget with ValueMixin{
       StaggeredGrid.count(
         crossAxisCount: isMobile ? 1: 2,
           children: const [
-            WhatICanDoCardItem(
+            CardItem(
                   title: 'Web Devvelopment',
                   description: 'As a developer, I find myself mostcaptivated by the power and flexibility ofNEXT.js. I\'m always eager to dive into newprojects that leverage NEXT.js anddiscover innovative ways to create fast, scalable, and user-friendly applications.',
                 ),
-            WhatICanDoCardItem(
+            CardItem(
                   title: 'App Development',
                   description: 'With a focus on user-centric design andcutting-edge technologies, I thrive onbuilding intuitive and efficient appsthat make a positive impact on people\'slives. Let\'s turn ideas into reality andshape the future together.',
                 ),
 
-            WhatICanDoCardItem(
+            CardItem(
               title: 'App Development',
               description: 'ether.',
             ),
-            WhatICanDoCardItem(
+            CardItem(
               title: 'App Development',
               description: 'With a focus on user-centric design andcutting-edge technologies, I thrive onbuilding intuitive and efficient appsthat make a positive impact on people\'slives. Let\'s turn ideas into reality andshape the future together.',
             ),
