@@ -5,14 +5,16 @@ import 'package:portfolio_v2/core/utils/responsive_util.dart';
 
 import '../../../core/theme/shape.dart';
 
-class WhatICanDoCardItem extends StatelessWidget {
-  const WhatICanDoCardItem({
+class CardItem extends StatelessWidget {
+  const CardItem({
     super.key,
     required this.title,
     required this.description,
+    this.fontSize
   });
   final String title;
   final String description;
+  final double? fontSize;
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveUtil(context).isMobile;
@@ -29,7 +31,7 @@ class WhatICanDoCardItem extends StatelessWidget {
           spacing: 6,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(title,style: context.largeTextStyle.copyWith(fontFamily: AppFonts.poppins),),
+            Text(title,style: context.largeTextStyle.copyWith(fontFamily: AppFonts.poppins,fontSize:fontSize ),),
             Text(description,style: context.smallTextStyle,),
           ],
         ),

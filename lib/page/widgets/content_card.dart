@@ -7,18 +7,18 @@ class ContentView extends StatelessWidget {
   const ContentView({
     super.key,
     required this.child,
+    this.color,
   });
 
   final Widget child;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints.expand(),
-      child: Card(
-        shape: AppShapes.roundedRectangleBorder,
-        elevation: 0,
-        child: child,
-      ),
+    return Card(
+      color: color,
+      shape: AppShapes.roundedRectangleBorder,
+      elevation: 0,
+      child: child,
     );
   }
 }

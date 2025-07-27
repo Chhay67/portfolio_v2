@@ -27,37 +27,33 @@ final appRouteProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path:  RouteEnum.home.path,
             name: RouteEnum.home.name,
-            pageBuilder: (context, state) => CustomTransitionPage(
+            pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
               child: const HomePage(),
-              transitionsBuilder: _fadeTransition,
             ),
           ),
           GoRoute(
             path:  RouteEnum.resume.path,
             name: RouteEnum.resume.name,
-            pageBuilder: (context, state) => CustomTransitionPage(
+            pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
               child: const ResumePage(),
-              transitionsBuilder: _fadeTransition,
             ),
           ),
           GoRoute(
             path:  RouteEnum.work.path,
             name: RouteEnum.work.name,
-            pageBuilder: (context, state) => CustomTransitionPage(
+            pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
               child: const WorkPage(),
-              transitionsBuilder: _fadeTransition,
             ),
           ),
           GoRoute(
             path:  RouteEnum.contact.path,
             name: RouteEnum.contact.name,
-            pageBuilder: (context, state) => CustomTransitionPage(
+            pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
               child: const ContactPage(),
-              transitionsBuilder: _fadeTransition,
             ),
           ),
         ],
@@ -67,19 +63,3 @@ final appRouteProvider = Provider<GoRouter>((ref) {
 });
 
 
-Widget _fadeTransition(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-    Widget child,
-    ) {
-  final curved = CurvedAnimation(
-    parent: animation,
-    curve: Curves.easeInOut,
-  );
-
-  return FadeTransition(
-    opacity: curved,
-    child: child,
-  );
-}
