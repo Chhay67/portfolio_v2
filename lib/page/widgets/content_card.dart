@@ -8,17 +8,23 @@ class ContentView extends StatelessWidget {
     super.key,
     required this.child,
     this.color,
+    this.width,
   });
 
   final Widget child;
   final Color? color;
+  final double? width;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: color,
-      shape: AppShapes.roundedRectangleBorder,
-      elevation: 0,
-      child: child,
+    return SizedBox(
+      width:width ,
+      child: Card(
+        margin: EdgeInsets.zero,
+        color: color,
+        shape: AppShapes.roundedRectangleBorder,
+        elevation: 0,
+        child: child,
+      ),
     );
   }
 }
