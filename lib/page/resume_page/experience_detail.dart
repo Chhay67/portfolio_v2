@@ -1,9 +1,5 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
-import 'package:portfolio_v2/page/resume_page/widget/time_line_item.dart';
 import 'package:portfolio_v2/page/widgets/content_card.dart';
 
 import '../../core/utils/responsive_util.dart';
@@ -16,38 +12,31 @@ class ExperienceDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveUtil(context).isMobile;
-    return ContentView(
-      color: isMobile ? Theme.of(context).cardTheme.color: Theme.of(context).scaffoldBackgroundColor,
-      child: Padding(
-        padding: EdgeInsets.all(
-            context.defaultResponsive(mobile: 16, tablet: 20, desktop: 22)),
-        child: Row(
-          children: [
-            Flexible(
-              child: Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.max,
+      spacing: 10,
+      children: [
+        Text('Experience', style: context.largeTextStyle),
+        ContentView(
+          width: double.maxFinite,
+          color: isMobile ? Theme.of(context).cardTheme.color: Theme.of(context).scaffoldBackgroundColor,
+          child: Padding(
+            padding: EdgeInsets.all(
+                context.defaultResponsive(mobile: 16, tablet: 20, desktop: 22)),
+            child: Column(
+              spacing: 10,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Present', style: context.smallTextStyle,),
+                Text('Working at Polygram Solutions',style: context.mediumTextStyle),
+                Text('Mobile Development using Flutter Framework',style: context.smallTextStyle),
 
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Experience',
-                      style: context.largeTextStyle,
-                      ),
-                  const TimeLineItem(
-                    title: 'Flutter Developer at Polygram Solutions',
-                    description: 'currently',
-                  ),
-                  const TimeLineItem(
-                    title: 'Flutter Developer at Polygram Solutions',
-                    description: 'currently',
-                    isLastChild: true,
-                  ),
-
-                ],
-              ),
+              ],
             ),
-
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

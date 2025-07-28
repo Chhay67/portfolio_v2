@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show AppBarTheme, CardThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData;
+    show AppBarTheme, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData;
 import 'package:portfolio_v2/core/theme/shape.dart';
 
 import '../utils/app_fonts.dart';
@@ -40,6 +40,11 @@ class AppThemes {
     iconTheme: const IconThemeData(
       color: AppColors.black,
       size: 24,
+    ),
+    chipTheme: const ChipThemeData(
+      backgroundColor:  AppColors.lightBackground,
+      elevation: 0,
+
     ),
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(
@@ -81,6 +86,11 @@ class AppThemes {
         color: AppColors.white,
         size: 24,
       ),
+
+    ),
+    chipTheme: const ChipThemeData(
+      backgroundColor:  AppColors.darkBackground,
+      elevation: 0,
 
     ),
     iconTheme: const IconThemeData(
