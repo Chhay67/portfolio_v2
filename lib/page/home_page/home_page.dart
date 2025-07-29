@@ -18,13 +18,13 @@ class HomePage extends StatelessWidget with ValueMixin{
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('ABOUT ME',style: context.largeTextStyle.copyWith(fontSize: 32),),
+          Text('ABOUT ME',style: context.largeTextStyle,),
           const Divider(),
           Text('Hello there! I\'m thrilled to welcome you to my portfolio. I am a passionate and versatile full-stack developer with a keen interest in exploring the latest cutting-edge technologies.My journey in the world of web development has been nothing short of exhilarating, andI constantly strive to enhance my skills and embrace emerging trends in the industry.',
             style: context.smallTextStyle,
           ),
           const SizedBox(height: 10),
-          Text('What I do!',style: context.largeTextStyle.copyWith(fontSize: 32),),
+          Text('What I do!',style: context.largeTextStyle),
       StaggeredGrid.count(
         crossAxisCount: isMobile ? 1: 2,
           children: const [

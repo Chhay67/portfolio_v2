@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../core/theme/color.dart';
 import '../../../core/utils/app_images.dart';
-import '../../../core/utils/app_value.dart';
+import '../../../core/utils/app_radius.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({super.key,this.constraints});

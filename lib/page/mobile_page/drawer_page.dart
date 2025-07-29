@@ -26,11 +26,10 @@ class DrawerPage extends ConsumerWidget with ValueMixin{
   }
   @override
   Widget build(BuildContext context,WidgetRef ref) {
-
+    final padding = context.padding;
     return Drawer(
-
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppPadding.defaultPadding, vertical:AppPadding.defaultPadding),
+        padding:  EdgeInsets.symmetric(horizontal: padding.md, vertical:padding.md),
         child: Column(
           spacing: 10,
           children: [

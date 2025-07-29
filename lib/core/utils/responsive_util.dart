@@ -1,24 +1,27 @@
+import 'package:flutter/material.dart' show MediaQuery, BuildContext;
 
-
-
-
-import 'package:flutter/material.dart' show MediaQuery,BuildContext;
 enum DeviceType {
   mobile,
   tablet,
   desktop,
 }
+
 class ResponsiveUtil {
   final BuildContext context;
   final double width;
+  final double height;
 
-  ResponsiveUtil(this.context) : width = MediaQuery.of(context).size.width;
+  static const double baseWidth = 375;
+  static const double baseHeight = 812;
+
+  ResponsiveUtil(this.context)
+      : width = MediaQuery.of(context).size.width,
+        height = MediaQuery.of(context).size.height;
 
   bool get isMobile => width < 600;
-
   bool get isTablet => width >= 600 && width < 1024;
-
   bool get isDesktop => width >= 1024;
+  bool get isSmallHeight => height < 600;
 
 // 🔹 Device type getter
   DeviceType get deviceType {
@@ -29,10 +32,7 @@ class ResponsiveUtil {
 
   /// Example: use for percentage-based width
   double wp(double percent) => width * percent / 100;
-
-  /// Example: use for percentage-based height
-  double hp(double percent) => MediaQuery.of(context).size.height * percent / 100;
-
+  double hp(double percent) => height * percent / 100;
   /// Example: apply different layout values
   T responsiveValue<T>({
     required T mobile,
@@ -44,6 +44,6 @@ class ResponsiveUtil {
     return mobile;
   }
 
-
+  static ResponsiveUtil of(BuildContext context) => ResponsiveUtil(context);
 
 }

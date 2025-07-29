@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
+import '../../core/utils/app_radius.dart';
 import '../../core/utils/app_value.dart';
 
 class ContactsView extends StatelessWidget {
@@ -11,14 +12,15 @@ class ContactsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final defaultPadding = context.padding;
     return Container(
       width: double.maxFinite,
       margin:margin ??  EdgeInsets.symmetric(
         horizontal: context.defaultResponsive(mobile: 12, tablet: 24, desktop: 32),
       ),
-      padding:padding ?? const EdgeInsets.symmetric(
-        horizontal: AppPadding.defaultPadding,
-        vertical: AppPadding.defaultPadding,
+      padding:padding ??  EdgeInsets.symmetric(
+        horizontal: defaultPadding.md,
+        vertical:  defaultPadding.md,
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,

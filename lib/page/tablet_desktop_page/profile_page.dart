@@ -21,9 +21,9 @@ class ProfilePage extends ConsumerWidget {
     final iconSize = context.defaultResponsive(mobile: 12,tablet: 18,desktop: 20);
 
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(vertical: AppPadding.defaultPadding),
+      padding:  EdgeInsets.symmetric(vertical: context.padding.md),
       child: Column(
-        spacing: AppSpacer.defaultSpacer,
+        spacing: 10,
         mainAxisSize: MainAxisSize.max,
         children: [
           const ProfileImage(),

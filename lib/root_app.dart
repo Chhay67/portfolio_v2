@@ -13,8 +13,8 @@ class RootApp extends ConsumerWidget {
     final appRoute = ref.watch(appRouteProvider);
     return  MaterialApp.router(
       title: 'Flutter Demo',
-      theme: AppThemes.lightMode,
-      darkTheme: AppThemes.darkMode,
+      theme: AppThemes.lightModeTheme(context),
+      darkTheme: AppThemes.darkModeTheme(context),
       themeMode: themeMode,
       routerConfig: appRoute,
     );

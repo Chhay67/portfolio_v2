@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../core/utils/app_spacer.dart';
 import '../../../core/utils/app_value.dart';
 import 'general_button.dart';
 
@@ -20,8 +21,8 @@ class SocialMediaButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      runSpacing: AppSpacer.defaultSpacer,
-      spacing: AppSpacer.defaultSpacer,
+      runSpacing: AppSpacer.defaultSpace,
+      spacing: AppSpacer.defaultSpace,
       children: [
         GeneralButton(
           color: color,

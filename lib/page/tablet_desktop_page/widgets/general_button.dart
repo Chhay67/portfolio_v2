@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 import '../../../core/theme/color.dart';
-import '../../../core/utils/app_value.dart';
 
 class GeneralButton extends StatelessWidget {
   const GeneralButton({
@@ -9,7 +8,7 @@ class GeneralButton extends StatelessWidget {
     this.onPressed,
     required this.child,
     this.color,
-    this.borderRadius = AppRadius.medium,
+    this.borderRadius = 16,
     this.isSelected = false,
     this.isExpanded = false,
     this.isFullWidth = false,
