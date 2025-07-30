@@ -14,12 +14,9 @@ class ContactsView extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       margin:margin ??  EdgeInsets.symmetric(
-        horizontal: context.defaultResponsive(mobile: 12, tablet: 24, desktop: 32),
+        horizontal: context.padding(),
       ),
-      padding:padding ?? const EdgeInsets.symmetric(
-        horizontal: AppPadding.defaultPadding,
-        vertical: AppPadding.defaultPadding,
-      ),
+      padding:padding ??  EdgeInsets.all( context.padding()),
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(AppRadius.defaultRadius),

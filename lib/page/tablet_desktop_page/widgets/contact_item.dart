@@ -7,14 +7,16 @@ class ContactItem extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.subtitle,
+    this.padding,
   });
   final IconData icon;
   final String title;
   final String subtitle;
+  final EdgeInsets? padding;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 10, left: context.defaultResponsive(mobile: 12,tablet: 16,desktop: 20),top: 10),
+      padding: padding?? const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(color: Colors.grey.shade200)

@@ -6,6 +6,7 @@ import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/page/resume_page/soft_skills.dart';
 import 'package:portfolio_v2/page/resume_page/work_skills.dart';
 
+import '../../core/utils/app_fonts.dart';
 import '../../core/utils/responsive_util.dart';
 import 'education_detail.dart';
 import 'experience_detail.dart';
@@ -16,28 +17,52 @@ class ResumePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = ResponsiveUtil(context).isMobile;
+    final r = context.responsive;
+    final padding = context.padding();
+    final largeStyle = context.largeTextStyle.copyWith(fontSize: 26,fontFamily: AppFonts.poppins);
+    final isMobile = r.isMobile;
+    final theme = Theme.of(context);
+    final smallStyle = context.smallTextStyle;
+    final mediumStyle = context.mediumTextStyle;
+    final largeStyle2 = context.largeTextStyle;
     return SingleChildScrollView(
-      padding: EdgeInsets.all(
-          context.defaultResponsive(mobile: 16, tablet: 20, desktop: 22)),
+      padding: isMobile ? EdgeInsets.zero: EdgeInsets.all(padding),
       child: Column(
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'RESUME',
-            style: context.largeTextStyle.copyWith(fontSize: 32),
+            style: largeStyle,
           ),
           const Divider(),
           StaggeredGrid.count(
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
             crossAxisCount: isMobile ? 1: 2,
-            children: const [
-              EducationDetail(),
-              ExperienceDetail(),
-              WorkSkills(),
-              SoftSkills(),
+            children:  [
+              EducationDetail(
+                color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
+                smallStyle: smallStyle,
+                largeStyle: largeStyle2,
+                padding: padding,
+                mediumStyle: mediumStyle,
+              ),
+              ExperienceDetail(
+                color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
+                smallStyle: smallStyle,
+                largeStyle: largeStyle2,
+                padding: padding,
+                mediumStyle: mediumStyle,
+              ),
+              WorkSkills(
+                smallStyle: smallStyle,
+                largeStyle: largeStyle2,
+              ),
+              SoftSkills(
+                smallStyle: smallStyle,
+                largeStyle: largeStyle2,
+              ),
             ],
 
           ),

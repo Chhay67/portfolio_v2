@@ -2,12 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
-import 'package:portfolio_v2/core/utils/responsive_util.dart';
 
-import '../../core/mixin/padding_mixin.dart';
 import 'gradient_button.dart';
 
-class MyAppBar extends StatelessWidget with ValueMixin implements PreferredSizeWidget{
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget{
 
   final Function() onThemeChange;
   final Function() onDownloadResume;
@@ -22,22 +20,22 @@ class MyAppBar extends StatelessWidget with ValueMixin implements PreferredSizeW
 
   @override
   Widget build(BuildContext context) {
-    final responsive = ResponsiveUtil(context);
+    final isMobile = context.responsive.isMobile;
     return Container(
-      margin: EdgeInsets.only(top:padding(context)),
-      padding: EdgeInsets.symmetric(horizontal:context.defaultResponsive()),
+      margin: EdgeInsets.only(top:context.margin()),
+      padding: EdgeInsets.symmetric(horizontal:context.padding(desktop: 80)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          if(responsive.isMobile)
+          if(isMobile)
             IconButton.outlined(onPressed: onClickDrawer, icon: const Icon(Icons.menu,)),
-          if(!responsive.isMobile)
+          if(!isMobile)
           IconButton.outlined(onPressed: onThemeChange, icon: const Icon(Icons.dark_mode,)),
           GradientButton(
             onPressed: onDownloadResume,
             padding: EdgeInsets.symmetric(
-              horizontal: context.defaultResponsive(mobile: 16,tablet: 20,desktop: 24),
-              vertical: context.defaultResponsive(mobile: 8, tablet: 12,desktop:  16),
+              horizontal: context.padding(mobile: 16,tablet: 20,desktop: 24),
+              vertical: context.padding(mobile: 8, tablet: 12,desktop:  16),
             ),
             child: Row(
               spacing: 10,
