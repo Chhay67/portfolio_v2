@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_v2/core/utils/app_extension.dart';
 import '../../../core/theme/color.dart';
 import '../../../core/utils/app_value.dart';
 
@@ -13,6 +12,7 @@ class GeneralButton extends StatelessWidget {
     this.isSelected = false,
     this.isExpanded = false,
     this.isFullWidth = false,
+    this.padding = const EdgeInsets.all(12),
   });
 
   final Function()? onPressed;
@@ -26,6 +26,7 @@ class GeneralButton extends StatelessWidget {
 
   final bool isExpanded;
   final bool isFullWidth;
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class GeneralButton extends StatelessWidget {
              gradient:isSelected ? AppColors.primaryGradient : null,
              borderRadius: BorderRadius.circular(borderRadius),
            ),
-           padding: EdgeInsets.all(context.defaultResponsive(mobile: 8, tablet: 12, desktop: 18)),
+           padding: padding,
            child: child,
          ),
        ),

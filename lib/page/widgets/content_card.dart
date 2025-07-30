@@ -9,15 +9,19 @@ class ContentView extends StatelessWidget {
     required this.child,
     this.color,
     this.width,
+    this.height,
   });
 
   final Widget child;
   final Color? color;
   final double? width;
+  final double? height;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width:width ,
+      width:width,
+      height: height,
       child: Card(
         margin: EdgeInsets.zero,
         color: color,

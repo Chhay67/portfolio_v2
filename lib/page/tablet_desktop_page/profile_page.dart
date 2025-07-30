@@ -12,13 +12,25 @@ import '../../route/route_enum.dart';
 import '../widgets/content_view.dart';
 
 class ProfilePage extends ConsumerWidget {
-  const ProfilePage({super.key,required this.onChangedIndex,required this.selectedNavBarIndex });
-  final Function( RouteEnum route ) onChangedIndex;
+  const ProfilePage(
+      {super.key,
+      required this.onChangedIndex,
+      required this.selectedNavBarIndex});
+
+  final Function(RouteEnum route) onChangedIndex;
   final int selectedNavBarIndex;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final iconSize = context.defaultResponsive(mobile: 12,tablet: 18,desktop: 20);
+    final theme = Theme.of(context);
+    final padding = context.padding();
+    final mediumStyle = context.mediumTextStyle.copyWith(fontFamily: AppFonts.raleWay, fontSize: 28);
+    final smallStyle = context.smallTextStyle.copyWith(fontFamily: AppFonts.raleWay);
+    final cardColor = theme.cardTheme.color;
+    final isHome = selectedNavBarIndex == RouteEnum.home.index;
+    final isResume = selectedNavBarIndex == RouteEnum.resume.index;
+    final isWork = selectedNavBarIndex == RouteEnum.work.index;
+    final isContact = selectedNavBarIndex == RouteEnum.contact.index;
 
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(vertical: AppPadding.defaultPadding),
@@ -27,26 +39,17 @@ class ProfilePage extends ConsumerWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           const ProfileImage(),
-          Text(
-            'Developer Name',
-            style: context.mediumTextStyle.copyWith(
-              fontFamily: AppFonts.raleWay,
-              fontSize: 28,
-            ),
-          ),
-          Text(
-            'Developer position',
-            style: context.smallTextStyle.copyWith(
-              fontFamily: AppFonts.raleWay,
-            ),
-          ),
+          Text('Developer Name', style: mediumStyle),
+          Text('Developer position', style: smallStyle),
           SocialMediaButtons(
             onLinkedInPressed: () {},
             onTelegramPressed: () {},
             onGitHubPressed: () {},
           ),
-          const ContactsView(
-            child: Column(
+          ContactsView(
+            padding:
+                EdgeInsets.symmetric(horizontal: padding, vertical: padding),
+            child: const Column(
               children: [
                 ContactItem(
                   icon: FontAwesomeIcons.mobileScreen,
@@ -55,11 +58,13 @@ class ProfilePage extends ConsumerWidget {
                 ),
                 ContactItem(
                   icon: FontAwesomeIcons.envelope,
+                  padding: EdgeInsets.only(bottom: 12, top: 12),
                   subtitle: 'Email',
                   title: 'email@gmail.com',
                 ),
                 ContactItem(
                   icon: FontAwesomeIcons.locationDot,
+                  padding: EdgeInsets.only(bottom: 12, top: 12),
                   subtitle: 'Location',
                   title: 'City, Country',
                 ),
@@ -71,48 +76,40 @@ class ProfilePage extends ConsumerWidget {
               spacing: 10,
               children: [
                 GeneralButton(
-                  color: Theme.of(context).cardTheme.color,
                   isExpanded: true,
-                  isSelected: selectedNavBarIndex == RouteEnum.home.index,
+                  color: cardColor,
+                  isSelected: isHome,
                   borderRadius: 12,
-                  child: Icon(FontAwesomeIcons.house,size: iconSize,),
-
-                  onPressed: () {
-                    onChangedIndex( RouteEnum.home,);
-                  },
-                ),
-                GeneralButton(
-                  color: Theme.of(context).cardTheme.color,
-                  isExpanded: true,
-                  isSelected: selectedNavBarIndex == RouteEnum.resume.index,
-                  borderRadius: 12,
-                  child: Icon(FontAwesomeIcons.newspaper,size: iconSize,),
-                  onPressed: () {
-                    onChangedIndex( RouteEnum.resume,);
-
-                  },
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: const Icon(FontAwesomeIcons.house),
+                  onPressed: () => onChangedIndex(RouteEnum.home),
                 ),
                 GeneralButton(
                   isExpanded: true,
-                  color: Theme.of(context).cardTheme.color,
-                  isSelected: selectedNavBarIndex == RouteEnum.work.index,
+                  color: cardColor,
+                  isSelected: isResume,
                   borderRadius: 12,
-                  child: Icon(FontAwesomeIcons.briefcase,size: iconSize,),
-
-                  onPressed: () {
-                    onChangedIndex( RouteEnum.work,);
-                  },
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: const Icon(FontAwesomeIcons.newspaper),
+                  onPressed: () => onChangedIndex(RouteEnum.resume),
                 ),
                 GeneralButton(
                   isExpanded: true,
-                  color: Theme.of(context).cardTheme.color,
-                  isSelected: selectedNavBarIndex == RouteEnum.contact.index,
+                  color: cardColor,
+                  isSelected: isWork,
                   borderRadius: 12,
-                  child: Icon(FontAwesomeIcons.addressBook,size: iconSize,),
-
-                  onPressed: () {
-                    onChangedIndex( RouteEnum.contact,);
-                  },
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: const Icon(FontAwesomeIcons.briefcase),
+                  onPressed: () => onChangedIndex(RouteEnum.work),
+                ),
+                GeneralButton(
+                  isExpanded: true,
+                  color: cardColor,
+                  isSelected: isContact,
+                  borderRadius: 12,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: const Icon(FontAwesomeIcons.addressBook),
+                  onPressed: () => onChangedIndex(RouteEnum.contact),
                 ),
               ],
             ),

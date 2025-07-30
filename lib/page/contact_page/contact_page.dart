@@ -3,7 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/page/widgets/content_card.dart';
 
-import '../../core/utils/responsive_util.dart';
+import '../../core/utils/app_fonts.dart';
 import '../home_page/widget/what_i_can_do_card_item.dart';
 
 class ContactPage extends StatelessWidget {
@@ -11,47 +11,60 @@ class ContactPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isMobile = ResponsiveUtil(context).isMobile;
+    final r = context.responsive;
+    final padding = context.padding();
+    final largeStyle = context.largeTextStyle.copyWith(fontSize: 26,fontFamily: AppFonts.poppins);
+    final isMobile = r.isMobile;
+    final theme = Theme.of(context);
+    final smallStyle = context.smallTextStyle;
+
     return SingleChildScrollView(
-      padding: EdgeInsets.all(
-          context.defaultResponsive(mobile: 16, tablet: 20, desktop: 22)),
+      padding: isMobile ? EdgeInsets.zero: EdgeInsets.all(padding),
       child: Column(
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'CONTACT',
-            style: context.largeTextStyle.copyWith(fontSize: 32),
+            style:largeStyle,
           ),
           const Divider(),
           StaggeredGrid.count(
             crossAxisCount: isMobile ? 1 : 2,
-            children: const [
+            mainAxisSpacing: 16,
+            crossAxisSpacing: 16,
+            children:  [
               CardItem(
+                color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
+                padding: padding,
+                largeStyle: largeStyle,
+                smallStyle: smallStyle,
                 fontSize: 16,
                 title: 'Phone Number',
                 description: '+254723909353\n+254723909353',
               ),
               CardItem(
+                color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
+                padding: padding,
+                largeStyle: largeStyle,
+                smallStyle: smallStyle,
                 fontSize: 16,
-                title: 'Email me:',
+                title: 'My Email:',
                 description: 'songkimchhay67@gmail.com',
               ),
             ],
           ),
           ContentView(
-            color: isMobile ? Theme.of(context).cardTheme.color: Theme.of(context).scaffoldBackgroundColor,
+            color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
               child: Padding(
-            padding: EdgeInsets.all(
-                 context.defaultResponsive(
-                    mobile: 16, tablet: 20, desktop: 24) ),
+            padding: EdgeInsets.all(padding ),
             child: Column(
               spacing: 10,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'I am always open to discussing new projects, opportunities in tech world,partnerships and more so mentorship. ',
-                  style: context.smallTextStyle,
+                  style: smallStyle,
                 ),
                 const TextField(
                   decoration:InputDecoration(
@@ -74,7 +87,7 @@ class ContactPage extends StatelessWidget {
                 const SizedBox(height: 10,),
                 OutlinedButton(onPressed: () {
 
-                }, child: Text('Submit',style: context.smallTextStyle,))
+                }, child: Text('Submit',style: smallStyle))
               ],
             ),
           ))

@@ -18,8 +18,30 @@ extension ContextExtension on BuildContext {
   }
 
 
-  double  defaultResponsive({double mobile = 16, double tablet = 24, double desktop = 80}) {
-    final responsive = ResponsiveUtil(this);
+  ResponsiveUtil get responsive => ResponsiveUtil(this);
+
+  double padding({
+    double mobile = 16,
+    double tablet = 20,
+    double desktop = 24,
+  }) {
+
+    switch(responsive.deviceType) {
+      case DeviceType.mobile:
+        return mobile;
+      case DeviceType.tablet:
+        return tablet;
+      case DeviceType.desktop:
+        return desktop;
+    }
+  }
+
+  double margin({
+    double mobile = 16,
+    double tablet = 24,
+    double desktop = 32,
+  }) {
+
     switch(responsive.deviceType) {
       case DeviceType.mobile:
         return mobile;

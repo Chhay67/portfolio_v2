@@ -7,31 +7,42 @@ import '../../core/utils/responsive_util.dart';
 class ExperienceDetail extends StatelessWidget {
   const ExperienceDetail({
     super.key,
+    required this.color,
+    required this.smallStyle,
+    required this.largeStyle,
+    required this.mediumStyle,
+    required this.padding,
   });
 
+  final TextStyle largeStyle;
+
+  final TextStyle smallStyle;
+  final TextStyle mediumStyle;
+  final double padding;
+
+  final Color? color;
   @override
   Widget build(BuildContext context) {
-    final isMobile = ResponsiveUtil(context).isMobile;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.max,
       spacing: 10,
       children: [
-        Text('Experience', style: context.largeTextStyle),
+        Text('Experience', style: largeStyle),
         ContentView(
           width: double.maxFinite,
-          color: isMobile ? Theme.of(context).cardTheme.color: Theme.of(context).scaffoldBackgroundColor,
+          color: color,
           child: Padding(
             padding: EdgeInsets.all(
-                context.defaultResponsive(mobile: 16, tablet: 20, desktop: 22)),
+                padding),
             child: Column(
               spacing: 10,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Present', style: context.smallTextStyle,),
-                Text('Working at Polygram Solutions',style: context.mediumTextStyle),
-                Text('Mobile Development using Flutter Framework',style: context.smallTextStyle),
-
+                Text('Present', style: smallStyle),
+                Text('Working at Polygram Solutions',style: mediumStyle),
+                Text('Mobile Development using Flutter Framework',style: smallStyle),
               ],
             ),
           ),
