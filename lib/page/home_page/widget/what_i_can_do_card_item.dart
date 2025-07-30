@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/core/utils/app_fonts.dart';
-import 'package:portfolio_v2/core/utils/responsive_util.dart';
 
 import '../../../core/theme/shape.dart';
 

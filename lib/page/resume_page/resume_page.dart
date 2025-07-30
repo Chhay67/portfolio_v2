@@ -7,7 +7,6 @@ import 'package:portfolio_v2/page/resume_page/soft_skills.dart';
 import 'package:portfolio_v2/page/resume_page/work_skills.dart';
 
 import '../../core/utils/app_fonts.dart';
-import '../../core/utils/responsive_util.dart';
 import 'education_detail.dart';
 import 'experience_detail.dart';
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_v2/core/utils/app_extension.dart';
 
 
 class SoftSkills extends StatelessWidget {

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/page/widgets/content_card.dart';
 
-import '../../core/utils/responsive_util.dart';
 
 class ExperienceDetail extends StatelessWidget {
   const ExperienceDetail({
