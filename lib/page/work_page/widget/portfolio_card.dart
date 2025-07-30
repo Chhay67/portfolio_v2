@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_v2/core/utils/app_extension.dart';
 
 import '../../../core/theme/shape.dart';
-import '../../../core/utils/app_fonts.dart';
-import '../../../core/utils/responsive_util.dart';
 
 class PortfolioCard extends StatelessWidget {
   const PortfolioCard({
@@ -11,33 +8,41 @@ class PortfolioCard extends StatelessWidget {
     required this.title,
     required this.description,
     this.fontSize = 18.0,
+    this.padding =  0,
+    required this.color,
+    required this.mediumStyle,
+    required this.smallStyle,
+    this.height = 100,
   });
   final String title;
   final String description;
   final double? fontSize;
+
+  final Color? color;
+  final double padding;
+  final TextStyle mediumStyle;
+  final TextStyle smallStyle;
+  final double height;
   @override
   Widget build(BuildContext context) {
-    final isMobile = ResponsiveUtil(context).isMobile;
-    final largeStyle = context.largeTextStyle.copyWith(fontFamily: AppFonts.poppins,fontSize:fontSize );
-    final smallStyle = context.smallTextStyle;
-    final padding = context.padding();
-    final theme = Theme.of(context);
+
     return Card(
       elevation: 0,
       shape: AppShapes.roundedRectangleBorder,
       margin: EdgeInsets.zero,
-      color:isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
+      color:color,
       child: Padding(
         padding:  EdgeInsets.all(padding),
         child: Column(
           spacing: 6,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              color: Colors.green,
-              child: const Placeholder(),
+             SizedBox(
+               width: double.maxFinite,
+              height: height,
+              child: const Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,)),),
             ),
-            Text(title,style: largeStyle),
+            Text(title,style: mediumStyle),
             Text(description,style: smallStyle),
           ],
         ),

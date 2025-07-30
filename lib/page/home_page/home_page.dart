@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget{
         children: [
           Text('ABOUT ME',style: largeStyle),
           const Divider(),
-          Text('Hello there! I\'m thrilled to welcome you to my portfolio. I am a passionate and versatile full-stack developer with a keen interest in exploring the latest cutting-edge technologies.My journey in the world of web development has been nothing short of exhilarating, andI constantly strive to enhance my skills and embrace emerging trends in the industry.',
+          Text('Hello there! I\'m thrilled to welcome you to my portfolio. I am a passionate and versatile full-stack developer with a keen interest in exploring the latest cutting-edge technologies.My journey in the world of web and app development has been nothing short of exhilarating, andI constantly strive to enhance my skills and embrace emerging trends in the industry.',
             style: smallStyle,
           ),
           const SizedBox(height: 10),
@@ -42,17 +42,8 @@ class HomePage extends StatelessWidget{
                 largeStyle: largeStyle,
                 smallStyle: smallStyle,
                 fontSize: fontSize,
-                  title: 'Web Devvelopment',
-                  description: 'As a developer, I find myself mostcaptivated by the power and flexibility ofNEXT.js. I\'m always eager to dive into newprojects that leverage NEXT.js anddiscover innovative ways to create fast, scalable, and user-friendly applications.',
-                ),
-            CardItem(
-              color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
-              padding: padding,
-              largeStyle: largeStyle,
-              smallStyle: smallStyle,
-              fontSize: fontSize,
-                  title: 'App Development',
-                  description: 'With a focus on user-centric design andcutting-edge technologies, I thrive onbuilding intuitive and efficient appsthat make a positive impact on people\'slives. Let\'s turn ideas into reality andshape the future together.',
+                  title: 'Web Development',
+              description: 'I specialize in building fast, scalable, and maintainable web applications using modern frameworks like Angular and Vue.js. I enjoy transforming complex requirements into elegant, user-friendly interfaces while following best practices in performance and accessibility.',
                 ),
 
             CardItem(
@@ -62,7 +53,7 @@ class HomePage extends StatelessWidget{
               smallStyle: smallStyle,
               fontSize: fontSize,
               title: 'App Development',
-              description: 'ether.',
+              description: 'I build scalable and maintainable mobile applications using Flutter and Kotlin, guided by Clean Architecture, the MVVM pattern, and SOLID principles. My focus is on creating high-performance, intuitive apps with a well-structured codebase that’s easy to test, extend, and maintain. I strive to turn real-world ideas into seamless digital experiences.',
             ),
             CardItem(
               color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
@@ -70,9 +61,10 @@ class HomePage extends StatelessWidget{
               largeStyle: largeStyle,
               smallStyle: smallStyle,
               fontSize: fontSize,
-              title: 'App Development',
-              description: 'With a focus on user-centric design andcutting-edge technologies, I thrive onbuilding intuitive and efficient appsthat make a positive impact on people\'slives. Let\'s turn ideas into reality andshape the future together.',
+              title: 'Mentorship',
+              description: 'I have also found great joy in sharing my knowledge with others. Being a technicalmentor allows me to give back to thecommunity that has supported methroughout my career. ',
             ),
+
           ],
 
       ),

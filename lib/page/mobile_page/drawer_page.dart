@@ -57,13 +57,13 @@ class DrawerPage extends ConsumerWidget {
             ),
             const ProfileImage(),
             Text(
-              'Developer Name',
+              'Song Kimchhay',
               style: context.mediumTextStyle.copyWith(
                 fontSize: 28,
               ),
             ),
             Text(
-              'Developer position',
+              'Mobile Developer',
               style: context.smallTextStyle,
             ),
             SocialMediaButtons(

@@ -41,7 +41,7 @@ class ContactPage extends StatelessWidget {
                 smallStyle: smallStyle,
                 fontSize: 16,
                 title: 'Phone Number',
-                description: '+254723909353\n+254723909353',
+                description: '012 831 354',
               ),
               CardItem(
                 color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,

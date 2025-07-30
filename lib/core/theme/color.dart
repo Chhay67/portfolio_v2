@@ -22,7 +22,7 @@ class AppColors{
 
   // 🔹 Gradient Colors
   static const LinearGradient primaryGradient = LinearGradient(
-    colors: [orange, red],
+    colors: [Color(0xFF20c997), Color(0xFF0d6efd)],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
   );
