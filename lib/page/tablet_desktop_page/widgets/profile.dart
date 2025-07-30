@@ -1,8 +1,4 @@
-
-import 'package:flutter/cupertino.dart';
-
-import '../../../core/theme/color.dart';
-import '../../../core/utils/app_images.dart';
+import 'package:flutter/material.dart';
 import '../../../core/utils/app_value.dart';
 
 class ProfileImage extends StatelessWidget {
@@ -16,13 +12,20 @@ class ProfileImage extends StatelessWidget {
           minWidth: 100,
           maxHeight: 200,
           maxWidth: 200),
+
+      alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(AppRadius.defaultRadius),
-        image: const DecorationImage(
-          image: AssetImage(AppImages.defaultProfile),
-          fit: BoxFit.fill,
-        ),
+        // image: const DecorationImage(
+        //   image: AssetImage(AppImages.defaultProfile),
+        //   fit: BoxFit.fill,
+        // ),
+      ),
+      child: const SizedBox(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        child: Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,)),),
       ),
     );
   }

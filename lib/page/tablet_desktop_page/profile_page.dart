@@ -39,8 +39,8 @@ class ProfilePage extends ConsumerWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           const ProfileImage(),
-          Text('Developer Name', style: mediumStyle),
-          Text('Developer position', style: smallStyle),
+          Text('Song Kimchhay', style: mediumStyle),
+          Text('Mobile Developer', style: smallStyle),
           SocialMediaButtons(
             onLinkedInPressed: () {},
             onTelegramPressed: () {},
@@ -54,19 +54,19 @@ class ProfilePage extends ConsumerWidget {
                 ContactItem(
                   icon: FontAwesomeIcons.mobileScreen,
                   subtitle: 'Phone Number',
-                  title: '+1234567890',
+                  title: '012 831 354',
                 ),
                 ContactItem(
                   icon: FontAwesomeIcons.envelope,
                   padding: EdgeInsets.only(bottom: 12, top: 12),
                   subtitle: 'Email',
-                  title: 'email@gmail.com',
+                  title: 'songkimchhay67@gmail.com',
                 ),
                 ContactItem(
                   icon: FontAwesomeIcons.locationDot,
                   padding: EdgeInsets.only(bottom: 12, top: 12),
                   subtitle: 'Location',
-                  title: 'City, Country',
+                  title: 'Phnom Penh',
                 ),
               ],
             ),
