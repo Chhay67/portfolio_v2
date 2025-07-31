@@ -33,9 +33,9 @@ class _MainScaffoldPageState extends ConsumerState<MainScaffoldPage> {
         case ThemeMode.light:
           return ThemeMode.dark;
         case ThemeMode.dark:
-          return ThemeMode.system;
-        case ThemeMode.system:
           return ThemeMode.light;
+        default :
+          return ThemeMode.system;
       }
     });
   }
