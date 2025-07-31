@@ -1,0 +1,8 @@
+flutter_native_splash:
+  web: true
+  color: "#F2F5F9" # background color
+  image: "assets/icon/welcome.png" # your splash image
+
+  # Optional for dark mode
+  color_dark: "#0f1011"
+  image_dark: "assets/icon/welcome_dark.png"

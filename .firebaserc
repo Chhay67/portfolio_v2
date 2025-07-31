@@ -1,0 +1,16 @@
+{
+  "projects": {},
+  "targets": {
+    "striker-portfolio": {
+      "hosting": {
+        "dev": [
+          "chhay-portfolio-dev"
+        ],
+        "prod": [
+          "chhay-portfolio"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
