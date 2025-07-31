@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/core/utils/app_extension.dart';
 
 import '../../../core/theme/shape.dart';
 
@@ -40,7 +41,7 @@ class PortfolioCard extends StatelessWidget {
              SizedBox(
                width: double.maxFinite,
               height: height,
-              child: const Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,)),),
+              child:  Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,style: context.smallTextStyle,)),),
             ),
             Text(title,style: mediumStyle),
             Text(description,style: smallStyle),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_v2/core/utils/app_extension.dart';
 import '../../../core/utils/app_value.dart';
 
 class ProfileImage extends StatelessWidget {
@@ -22,10 +23,10 @@ class ProfileImage extends StatelessWidget {
         //   fit: BoxFit.fill,
         // ),
       ),
-      child: const SizedBox(
+      child:  SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
-        child: Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,)),),
+        child: Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,style: context.smallTextStyle,)),),
       ),
     );
   }
