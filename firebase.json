@@ -1,0 +1,55 @@
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options_dev.dart": {
+          "projectId": "striker-portfolio",
+          "configurations": {
+            "web": "1:345168908721:web:d741aab33741117be22d90"
+          }
+        },
+        "lib/firebase_options_prod.dart": {
+          "projectId": "striker-portfolio",
+          "configurations": {
+            "web": "1:345168908721:web:c789301c6351f231e22d90"
+          }
+        }
+      }
+    }
+  },
+  "hosting": [
+    {
+      "target": "dev",
+      "public": "build/web",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "prod",
+      "public": "build/web",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+
+    {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "europe-west1"
+    }
+  }]
+}
