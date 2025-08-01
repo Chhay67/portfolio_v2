@@ -40,6 +40,7 @@ class AppConfig {
     }
   }
 
+  static bool get isProduction => appFlavor == Flavor.production;
 
 static String get appName {
     switch (appFlavor) {
