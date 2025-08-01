@@ -157,6 +157,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       TextFormField(
                         controller: _nameController,
                         textInputAction: TextInputAction.next,
+                        style: smallStyle,
                         decoration: const InputDecoration(
                           labelText: 'Name :',
                         ),
@@ -166,6 +167,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       TextFormField(
                         controller: _emailController,
                         textInputAction: TextInputAction.next,
+                        style: smallStyle,
                         decoration: const InputDecoration(
                           labelText: 'Email :',
                         ),
@@ -183,6 +185,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       TextFormField(
                         controller: _messageController,
                         textInputAction: TextInputAction.done,
+                        style: smallStyle,
                         decoration: const InputDecoration(
                           labelText: 'Message :',
                         ),
@@ -193,7 +196,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                         height: 10,
                       ),
                       OutlinedButton(
-                          onPressed: _submitForm,
+                          onPressed: contactState.isLoading ? null :_submitForm,
                           child: contactState.isLoading
                               ? const CircularProgressIndicator()
                               : Text('Submit', style: smallStyle))
