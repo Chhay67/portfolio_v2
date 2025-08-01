@@ -3,12 +3,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:portfolio_v2/core/config/app_config.dart';
 
-import '../../core/utils/logger.dart';
 import 'contact_state.dart';
 
 
