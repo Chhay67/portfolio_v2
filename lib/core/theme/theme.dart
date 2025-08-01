@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show AppBarTheme, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData, ProgressIndicatorThemeData;
+    show AppBarTheme, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData, ProgressIndicatorThemeData,  OutlinedButtonThemeData, OutlinedButton;
 import 'package:portfolio_v2/core/theme/shape.dart';
 
 import '../utils/app_fonts.dart';
@@ -63,6 +63,16 @@ class AppThemes {
         iconSize: 24,
       ),
     ),
+    outlinedButtonTheme :  OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+
+        side: const BorderSide(
+          color: AppColors.black,
+        ),
+        shape: AppShapes.roundedRectangleBorder,
+        textStyle: lightTextTheme.displaySmall
+      ),
+    ),
     colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.lightBackground,
         onSurface: AppColors.white,
@@ -122,6 +132,16 @@ class AppThemes {
       style: IconButton.styleFrom(
         foregroundColor: AppColors.white,
         iconSize: 24,
+      ),
+    ),
+    outlinedButtonTheme :  OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: AppColors.white,
+        side: const BorderSide(
+          color: AppColors.white,
+        ),
+        shape: AppShapes.roundedRectangleBorder,
+        textStyle: darkTextTheme.displaySmall
       ),
     ),
     colorScheme: ColorScheme.fromSeed(
