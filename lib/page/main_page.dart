@@ -41,9 +41,6 @@ class _MainScaffoldPageState extends ConsumerState<MainScaffoldPage> with UrlLau
       }
     });
   }
-  void onDownloadResume() {
-    // Implement download resume logic here
-  }
 
   void onClickDrawer(){
     final drawerState = scaffoldKey.currentState!;
