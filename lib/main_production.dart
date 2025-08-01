@@ -7,6 +7,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:portfolio_v2/root_app.dart';
 
 import 'core/config/app_config.dart';
+import 'core/utils/logger.dart';
 
 void main() async {
   runZonedGuarded(
@@ -18,8 +19,8 @@ void main() async {
       runApp( ProviderScope(child: RootApp(title: AppConfig.appName)));
     },
     (error, stackTrace) {
-      debugPrintStack(stackTrace: stackTrace);
-      debugPrint('Error: $error');
+      Logger.debugPrintStackTrace(stackTrace);
+      Logger.debugPrint('App Error: $error');
     },
   );
 }

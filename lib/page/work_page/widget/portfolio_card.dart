@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_v2/core/utils/app_extension.dart';
+import 'package:portfolio_v2/page/widgets/cached_image_network.dart';
 
 import '../../../core/theme/shape.dart';
 
@@ -38,11 +38,7 @@ class PortfolioCard extends StatelessWidget {
           spacing: 6,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             SizedBox(
-               width: double.maxFinite,
-              height: height,
-              child:  Placeholder(child: Center(child: Text(' image coming soon!',textAlign: TextAlign.center,style: context.smallTextStyle,)),),
-            ),
+            CachedNetworkImageWidget(imageUrl: 'imageUrl',width: double.maxFinite,height: height,),
             Text(title,style: mediumStyle),
             Text(description,style: smallStyle),
           ],
