@@ -156,6 +156,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       ),
                       TextFormField(
                         controller: _nameController,
+                        textInputAction: TextInputAction.next,
                         decoration: const InputDecoration(
                           labelText: 'Name :',
                         ),
@@ -164,6 +165,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       ),
                       TextFormField(
                         controller: _emailController,
+                        textInputAction: TextInputAction.next,
                         decoration: const InputDecoration(
                           labelText: 'Email :',
                         ),
@@ -180,6 +182,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       ),
                       TextFormField(
                         controller: _messageController,
+                        textInputAction: TextInputAction.done,
                         decoration: const InputDecoration(
                           labelText: 'Message :',
                         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 final themeModeProvider = StateProvider<ThemeMode>((ref) {
-  return ThemeMode.system == ThemeMode.light ? ThemeMode.light : ThemeMode.dark;
+  final brightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
+  return brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light;
 });
