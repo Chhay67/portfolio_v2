@@ -16,7 +16,7 @@ class AppThemes {
     textTheme: lightTextTheme,
     cardColor: AppColors.white,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
-      color: AppColors.white,
+      color: AppColors.black,
         constraints: BoxConstraints(
           minHeight: 20,
           minWidth: 20,
@@ -93,6 +93,7 @@ class AppThemes {
     dividerColor: AppColors.white,
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: AppColors.white,
+
       constraints: BoxConstraints(
         minHeight: 20,
         minWidth: 20,
