@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_v2/core/config/app_config.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/core/utils/app_value.dart';
 import 'package:portfolio_v2/page/mobile_page/widgets/drawer_item.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/profile.dart';
 
+import '../../core/mixin/url_launcher_mixin.dart';
 import '../../route/route_enum.dart';
 import '../tablet_desktop_page/widgets/general_button.dart';
 import '../tablet_desktop_page/widgets/social_media_buttons.dart';
 
-class DrawerPage extends ConsumerWidget {
+class DrawerPage extends ConsumerWidget with UrlLauncherMixin{
   const DrawerPage(
       {super.key,
       required this.onThemeChange,
@@ -31,6 +33,7 @@ class DrawerPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeColor = Theme.of(context).cardTheme.color;
+
     return Drawer(
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -68,9 +71,9 @@ class DrawerPage extends ConsumerWidget {
             ),
             SocialMediaButtons(
               color: Theme.of(context).cardTheme.color,
-              onLinkedInPressed: () {},
-              onTelegramPressed: () {},
-              onGitHubPressed: () {},
+              onLinkedInPressed: () => onLaunchUrl(context, linkUrl: AppConfig.linkedInUrl),
+              onTelegramPressed: () => onLaunchUrl(context, linkUrl: AppConfig.telegramUrl),
+              onGitHubPressed: () => onLaunchUrl(context, linkUrl: AppConfig.githubUrl),
             ),
             Column(
               spacing: 10,
