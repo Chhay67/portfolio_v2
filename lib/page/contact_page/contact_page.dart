@@ -6,6 +6,7 @@ import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/page/widgets/content_card.dart';
 import 'package:portfolio_v2/provider/contact_provider/contact_provider.dart';
 
+import '../../core/exception/app_exception.dart';
 import '../../core/utils/app_fonts.dart';
 import '../home_page/widget/what_i_can_do_card_item.dart';
 
@@ -67,7 +68,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
               Flexible(child: Text('Message sent successfully!',style: context.smallTextStyle,)),
             ],
           )));
-    } catch (error) {
+    }on ServerException catch (error) {
       if (!context.mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
@@ -82,7 +83,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const Icon(Icons.info_outline),
-              Flexible(child: Text(error.toString(),style: context.smallTextStyle,)),
+              Flexible(child: Text(error.message.toString(),style: context.smallTextStyle,)),
             ],
           )));
     }
@@ -195,6 +196,8 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       const SizedBox(
                         height: 10,
                       ),
+                      if (contactState.isLoading && contactState.infoMessage.isNotEmpty)
+                      Text(contactState.infoMessage,style: smallStyle,),
                       OutlinedButton(
                           onPressed: contactState.isLoading ? null :_submitForm,
                           child: contactState.isLoading

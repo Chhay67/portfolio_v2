@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:portfolio_v2/core/config/app_config.dart';
 
+import '../../core/exception/app_exception.dart';
 import 'contact_state.dart';
 
 
@@ -26,7 +27,7 @@ class ContactNotifier extends AutoDisposeNotifier<ContactState> {
     required String message,
   }) async {
     try {
-      state = state.copyWith(isLoading: true);
+      state = state.copyWith(isLoading: true,infoMessage: 'Booting up email sender take around 1 min...');
 
       final url = Uri.parse(AppConfig.emailSenderUrl);
 
@@ -42,20 +43,16 @@ class ContactNotifier extends AutoDisposeNotifier<ContactState> {
 
 
       if (response.statusCode != 200) {
-        throw HttpException(
-          'Failed to send message: ${response.statusCode}',
-          uri: url,
+        throw const ServerException(
+          message: 'Failed to send message.',
         );
       }
 
-      state = state.copyWith(isLoading: false);
-    } catch (e) {
+      state = const ContactState();
+    }  catch (e) {
 
-      state = state.copyWith(
-        isLoading: false,
-        errorMessage: 'Failed to send message.',
-      );
-      rethrow;
+      state =  const ContactState(errorMessage: 'Failed to send message.',);
+      throw const ServerException(message: 'Failed to send message.');
     }
   }
 
