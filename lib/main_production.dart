@@ -7,6 +7,8 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:portfolio_v2/root_app.dart';
 
 import 'core/config/app_config.dart';
+import 'core/service/cloud_firestore_service.dart';
+import 'core/utils/logger.dart';
 
 void main() async {
   runZonedGuarded(

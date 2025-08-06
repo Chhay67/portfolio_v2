@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
+import 'package:portfolio_v2/core/utils/app_value.dart';
 
 class CachedNetworkImageWidget extends StatelessWidget {
   const CachedNetworkImageWidget({
@@ -9,18 +10,21 @@ class CachedNetworkImageWidget extends StatelessWidget {
     this.height = 200,
     this.width = 200,
     this.errorText = 'No image available',
+    this.child
   });
 
   final String imageUrl;
   final double width;
   final double height;
   final String errorText;
-
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: imageUrl,
       imageBuilder: (context, imageProvider) => Container(
+        alignment:  Alignment.topRight,
+        padding: const EdgeInsets.only(right: AppPadding.medium,top:AppPadding.medium ),
         constraints:  BoxConstraints(
             maxHeight: height,
             maxWidth: width),
@@ -30,6 +34,7 @@ class CachedNetworkImageWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
         ),
+        child: child,
       ),
       height: height,
       width: width,

@@ -201,7 +201,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
                       OutlinedButton(
                           onPressed: contactState.isLoading ? null :_submitForm,
                           child: contactState.isLoading
-                              ? const CircularProgressIndicator()
+                              ? const CircularProgressIndicator.adaptive()
                               : Text('Submit', style: smallStyle))
                     ],
                   ),

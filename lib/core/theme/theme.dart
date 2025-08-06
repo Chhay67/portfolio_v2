@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show AppBarTheme, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData, ProgressIndicatorThemeData,  OutlinedButtonThemeData, OutlinedButton;
+    show AppBarTheme, BadgeThemeData, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, OutlinedButton, OutlinedButtonThemeData, ProgressIndicatorThemeData, TextStyle, TextTheme, ThemeData;
 import 'package:portfolio_v2/core/theme/shape.dart';
 
 import '../utils/app_fonts.dart';
@@ -73,6 +73,10 @@ class AppThemes {
         textStyle: lightTextTheme.displaySmall
       ),
     ),
+    badgeTheme: BadgeThemeData(
+      backgroundColor: AppColors.black,
+      textStyle: lightTextTheme.displaySmall!.copyWith(fontSize: 10),
+    ),
     colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.lightBackground,
         onSurface: AppColors.white,
@@ -128,6 +132,10 @@ class AppThemes {
     iconTheme: const IconThemeData(
       color: AppColors.white,
       size: 24,
+    ),
+    badgeTheme: BadgeThemeData(
+      backgroundColor: AppColors.white,
+      textStyle: darkTextTheme.displaySmall!.copyWith(fontSize: 10),
     ),
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(
