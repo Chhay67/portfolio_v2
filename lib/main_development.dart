@@ -7,12 +7,15 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:portfolio_v2/root_app.dart';
 
 import 'core/config/app_config.dart';
+import 'core/theme/theme.dart';
 import 'core/utils/logger.dart';
 
 void main() async {
   runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      setSystemUIOverlayStyle();
+
       setUrlStrategy(PathUrlStrategy());
       AppConfig.appFlavor = Flavor.dev;
       await Firebase.initializeApp(options: AppConfig.firebaseOptions);
