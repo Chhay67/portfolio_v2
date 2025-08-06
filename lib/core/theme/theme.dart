@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show AppBarTheme, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData;
+    show AppBarTheme, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, TextStyle, TextTheme, ThemeData, ProgressIndicatorThemeData,  OutlinedButtonThemeData, OutlinedButton;
 import 'package:portfolio_v2/core/theme/shape.dart';
 
 import '../utils/app_fonts.dart';
@@ -15,6 +15,17 @@ class AppThemes {
     fontFamily: AppFonts.raleWay,
     textTheme: lightTextTheme,
     cardColor: AppColors.white,
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: AppColors.black,
+        constraints: BoxConstraints(
+          minHeight: 20,
+          minWidth: 20,
+          maxHeight: 30,
+          maxWidth: 30,
+        ),
+
+    ),
+    dividerColor: AppColors.black,
     cardTheme: CardThemeData(
       color: AppColors.white,
       shape: AppShapes.roundedRectangleBorder,
@@ -52,6 +63,16 @@ class AppThemes {
         iconSize: 24,
       ),
     ),
+    outlinedButtonTheme :  OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+
+        side: const BorderSide(
+          color: AppColors.black,
+        ),
+        shape: AppShapes.roundedRectangleBorder,
+        textStyle: lightTextTheme.displaySmall
+      ),
+    ),
     colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.lightBackground,
         onSurface: AppColors.white,
@@ -69,6 +90,17 @@ class AppThemes {
     ),
     textTheme: darkTextTheme,
     cardColor: AppColors.darkBackground,
+    dividerColor: AppColors.white,
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: AppColors.white,
+
+      constraints: BoxConstraints(
+        minHeight: 20,
+        minWidth: 20,
+        maxHeight: 30,
+        maxWidth: 30,
+      )
+    ),
     cardTheme: CardThemeData(
       color: AppColors.darkCardColor,
       shape: AppShapes.roundedRectangleBorder,
@@ -101,6 +133,16 @@ class AppThemes {
       style: IconButton.styleFrom(
         foregroundColor: AppColors.white,
         iconSize: 24,
+      ),
+    ),
+    outlinedButtonTheme :  OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: AppColors.white,
+        side: const BorderSide(
+          color: AppColors.white,
+        ),
+        shape: AppShapes.roundedRectangleBorder,
+        textStyle: darkTextTheme.displaySmall
       ),
     ),
     colorScheme: ColorScheme.fromSeed(

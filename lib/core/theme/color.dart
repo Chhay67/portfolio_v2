@@ -6,8 +6,8 @@ import 'package:flutter/material.dart' show LinearGradient,Alignment;
 class AppColors{
   AppColors._();
 
-  static const Color orange = Color(0xFFFF9C1A);
-  static const Color red = Color(0xFFEC1B09);
+  static const Color orange = Color(0xFF20c997);
+  static const Color red = Color(0xFF0d6efd);
 
   static const Color lightBackground = Color(0xFFF2F5F9);
 
