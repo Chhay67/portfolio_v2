@@ -8,12 +8,14 @@ import 'package:portfolio_v2/root_app.dart';
 
 import 'core/config/app_config.dart';
 import 'core/service/cloud_firestore_service.dart';
+import 'core/theme/theme.dart';
 import 'core/utils/logger.dart';
 
 void main() async {
   runZonedGuarded(
     () async{
       WidgetsFlutterBinding.ensureInitialized();
+      setSystemUIOverlayStyle();
       setUrlStrategy(PathUrlStrategy());
       AppConfig.appFlavor = Flavor.production;
       await Firebase.initializeApp(options: AppConfig.firebaseOptions);

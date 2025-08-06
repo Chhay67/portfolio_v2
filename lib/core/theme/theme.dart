@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart'
-    show AppBarTheme, BadgeThemeData, CardThemeData, ChipThemeData, ColorScheme, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, OutlinedButton, OutlinedButtonThemeData, ProgressIndicatorThemeData, TextStyle, TextTheme, ThemeData;
+    show AppBarTheme, BadgeThemeData, CardThemeData, ChipThemeData, ColorScheme, Colors, DrawerThemeData, FontWeight, IconButton, IconButtonThemeData, OutlinedButton, OutlinedButtonThemeData, ProgressIndicatorThemeData, TextStyle, TextTheme, ThemeData;
+import 'package:flutter/services.dart';
 import 'package:portfolio_v2/core/theme/shape.dart';
 
 import '../utils/app_fonts.dart';
@@ -169,5 +170,23 @@ class AppThemes {
     displayLarge: TextStyle(fontSize: 24, color: AppColors.white,fontWeight: FontWeight.bold),
     displayMedium: TextStyle(fontSize: 20, color: AppColors.white,fontWeight: FontWeight.w500),
     displaySmall: TextStyle(fontSize: 18,color: AppColors.white, fontWeight: FontWeight.w400),
+  );
+}
+
+
+void setSystemUIOverlayStyle() {
+  final brightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
+
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent, // transparent for edge-to-edge
+      systemNavigationBarColor: Colors.transparent,
+      statusBarIconBrightness:
+      brightness == Brightness.dark ? Brightness.light : Brightness.dark,
+      systemNavigationBarIconBrightness:
+      brightness == Brightness.dark ? Brightness.light : Brightness.dark,
+    ),
   );
 }
