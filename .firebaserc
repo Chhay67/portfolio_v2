@@ -1,5 +1,7 @@
 {
-  "projects": {},
+  "projects": {
+    "default": "striker-portfolio"
+  },
   "targets": {
     "striker-portfolio": {
       "hosting": {
