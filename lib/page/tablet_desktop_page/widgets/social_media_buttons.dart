@@ -2,7 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_v2/page/widgets/page_view_count.dart';
 
 import '../../../core/utils/app_value.dart';
 import 'general_button.dart';
