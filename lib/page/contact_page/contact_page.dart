@@ -101,6 +101,7 @@ class _ContactPageState extends ConsumerState<ContactPage>
     final contactState = ref.watch(contactProvider);
     return SingleChildScrollView(
       padding: isMobile ? EdgeInsets.zero : EdgeInsets.all(padding),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,

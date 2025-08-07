@@ -26,6 +26,7 @@ class ResumePage extends StatelessWidget {
     final largeStyle2 = context.largeTextStyle;
     return SingleChildScrollView(
       padding: isMobile ? EdgeInsets.zero: EdgeInsets.all(padding),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         spacing: 10,
         crossAxisAlignment: CrossAxisAlignment.start,
