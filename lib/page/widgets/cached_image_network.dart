@@ -50,11 +50,11 @@ class CachedNetworkImageWidget extends StatelessWidget {
             maxWidth: width),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image: DecorationImage(image: imageProvider, fit: BoxFit.fitWidth),
+          image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
         ),
         child: child,
       ),
-      fit: BoxFit.fitWidth,
+      fit: BoxFit.cover,
       filterQuality: FilterQuality.high,
       maxHeightDiskCache: height.toInt(),
       maxWidthDiskCache: width.toInt(),
