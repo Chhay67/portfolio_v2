@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_v2/core/config/app_config.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/contact_item.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/general_button.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/profile.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/widgets/social_media_buttons.dart';
+import '../../core/constants/url_constants.dart';
 import '../../core/mixin/url_launcher_mixin.dart';
 import '../../core/utils/app_fonts.dart';
 import '../../core/utils/app_value.dart';
@@ -44,9 +44,9 @@ class ProfilePage extends ConsumerWidget with UrlLauncherMixin{
           Text('Song Kimchhay', style: mediumStyle),
           Text('Mobile Developer', style: smallStyle),
           SocialMediaButtons(
-            onLinkedInPressed: () => onLaunchUrl(context, linkUrl: AppConfig.linkedInUrl),
-            onTelegramPressed: () => onLaunchUrl(context, linkUrl: AppConfig.telegramUrl),
-            onGitHubPressed: () => onLaunchUrl(context, linkUrl: AppConfig.githubUrl),
+            onLinkedInPressed: () => onLaunchUrl(context, linkUrl: UrlConstants.linkedInUrl),
+            onTelegramPressed: () => onLaunchUrl(context, linkUrl: UrlConstants.telegramUrl),
+            onGitHubPressed: () => onLaunchUrl(context, linkUrl: UrlConstants.githubUrl),
           ),
           ContactsView(
             padding:

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_v2/core/config/app_config.dart';
+import 'package:portfolio_v2/core/constants/url_constants.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
 import 'package:portfolio_v2/core/utils/app_value.dart';
 import 'package:portfolio_v2/page/mobile_page/widgets/drawer_item.dart';
@@ -71,9 +71,9 @@ class DrawerPage extends ConsumerWidget with UrlLauncherMixin{
             ),
             SocialMediaButtons(
               color: Theme.of(context).cardTheme.color,
-              onLinkedInPressed: () => onLaunchUrl(context, linkUrl: AppConfig.linkedInUrl),
-              onTelegramPressed: () => onLaunchUrl(context, linkUrl: AppConfig.telegramUrl),
-              onGitHubPressed: () => onLaunchUrl(context, linkUrl: AppConfig.githubUrl),
+              onLinkedInPressed: () => onLaunchUrl(context, linkUrl: UrlConstants.linkedInUrl),
+              onTelegramPressed: () => onLaunchUrl(context, linkUrl: UrlConstants.telegramUrl),
+              onGitHubPressed: () => onLaunchUrl(context, linkUrl: UrlConstants.githubUrl),
             ),
             Column(
               spacing: 10,

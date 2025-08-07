@@ -14,6 +14,8 @@ class PortfolioCard extends StatelessWidget {
     required this.mediumStyle,
     required this.smallStyle,
     this.height = 100,
+    this.imageUrl = '',
+    this.isAssetImage = false,
   });
   final String title;
   final String description;
@@ -24,6 +26,10 @@ class PortfolioCard extends StatelessWidget {
   final TextStyle mediumStyle;
   final TextStyle smallStyle;
   final double height;
+
+  final String imageUrl;
+
+  final bool isAssetImage;
   @override
   Widget build(BuildContext context) {
 
@@ -38,7 +44,7 @@ class PortfolioCard extends StatelessWidget {
           spacing: 6,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CachedNetworkImageWidget(imageUrl: 'imageUrl',width: double.maxFinite,height: height,),
+            CachedNetworkImageWidget(imageUrl: imageUrl,width: double.maxFinite, height: height,isAssetImage: isAssetImage,),
             Text(title,style: mediumStyle),
             Text(description,style: smallStyle),
           ],

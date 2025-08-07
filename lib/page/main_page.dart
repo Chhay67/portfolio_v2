@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio_v2/core/constants/url_constants.dart';
 import 'package:portfolio_v2/core/mixin/url_launcher_mixin.dart';
 import 'package:portfolio_v2/page/mobile_page/drawer_page.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/profile_page.dart';
 import 'package:portfolio_v2/page/tablet_desktop_page/tablet_desktop_page.dart';
 import 'package:portfolio_v2/page/widgets/app_bar.dart';
-
-import '../core/config/app_config.dart';
 import '../core/provider/nav_bar_provider.dart';
 import '../core/provider/theme_mode_provider.dart';
 import '../core/utils/responsive_util.dart';
@@ -81,7 +80,7 @@ class _MainScaffoldPageState extends ConsumerState<MainScaffoldPage> with UrlLau
       appBar: MyAppBar(
         onClickDrawer: onClickDrawer,
         onThemeChange: onThemeChange,
-        onDownloadResume: () => onLaunchUrl(context, linkUrl: AppConfig.resumeUrl),
+        onDownloadResume: () => onLaunchUrl(context, linkUrl: UrlConstants.resumeUrl),
       ),
       body: responsive.responsiveValue(
         mobile:  MobilePage(contentPage: widget.contentPage,),

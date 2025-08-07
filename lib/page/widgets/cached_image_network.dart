@@ -10,7 +10,8 @@ class CachedNetworkImageWidget extends StatelessWidget {
     this.height = 200,
     this.width = 200,
     this.errorText = 'No image available',
-    this.child
+    this.child,
+    this.isAssetImage = false,
   });
 
   final String imageUrl;
@@ -18,8 +19,28 @@ class CachedNetworkImageWidget extends StatelessWidget {
   final double height;
   final String errorText;
   final Widget? child;
+
+  final bool isAssetImage;
   @override
   Widget build(BuildContext context) {
+
+    if (isAssetImage) {
+      return Container(
+        alignment:  Alignment.topRight,
+        padding: const EdgeInsets.only(right: AppPadding.medium,top:AppPadding.medium ),
+        constraints:  BoxConstraints(
+            maxHeight: height,
+            maxWidth: width),
+        width: width,
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          image:  DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
+        ),
+        child: child,
+      );
+    }
+
     return CachedNetworkImage(
       imageUrl: imageUrl,
       imageBuilder: (context, imageProvider) => Container(

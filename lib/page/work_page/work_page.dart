@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:portfolio_v2/core/utils/app_extension.dart';
+import 'package:portfolio_v2/core/utils/app_images.dart';
 import 'package:portfolio_v2/page/work_page/widget/portfolio_card.dart';
 
+import '../../core/constants/url_constants.dart';
 import '../../core/utils/app_fonts.dart';
 
 
@@ -66,6 +68,17 @@ class WorkPage extends StatelessWidget {
                 description: 'Library App',
                 padding: padding,
                 height: 90,
+                mediumStyle: mediumStyle,
+                smallStyle:smallStyle ,
+              ),
+              PortfolioCard(
+                color: isMobile ? theme.cardTheme.color: theme.scaffoldBackgroundColor,
+                title: 'Android Development',
+                description: 'Notes App',
+                padding: padding,
+                isAssetImage: true,
+                height: 256,
+                imageUrl: AppImages.notesAppBgImg,
                 mediumStyle: mediumStyle,
                 smallStyle:smallStyle ,
               ),

@@ -4,8 +4,8 @@ import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
-import 'package:portfolio_v2/core/config/app_config.dart';
 
+import '../../core/constants/url_constants.dart';
 import '../../core/exception/app_exception.dart';
 import 'contact_state.dart';
 
@@ -28,7 +28,7 @@ class ContactNotifier extends AutoDisposeNotifier<ContactState> {
     try {
       state = state.copyWith(isLoading: true,infoMessage: 'Booting up email sender take around 1 min...');
 
-      final url = Uri.parse(AppConfig.emailSenderUrl);
+      final url = Uri.parse(UrlConstants.emailSenderUrl);
 
       final response = await http.post(
         url,

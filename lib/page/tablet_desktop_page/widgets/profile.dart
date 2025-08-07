@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_v2/page/widgets/page_view_count.dart';
-import '../../../core/config/app_config.dart';
+import '../../../core/constants/url_constants.dart';
 import '../../widgets/cached_image_network.dart';
 
 class ProfileImage extends StatelessWidget {
@@ -9,7 +9,7 @@ class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CachedNetworkImageWidget(
-      imageUrl: AppConfig.profileUrl,
+      imageUrl: UrlConstants.profileUrl,
       child: PageViewCount(),
     );
   }
