@@ -12,6 +12,6 @@ class UrlConstants{
 
   static const String emailSenderUrl = 'https://email-sender-p96m.onrender.com/send';
 
-  static const String notesAppBgUrl = "https://raw.githubusercontent.com/Chhay67/portfolio_v2/dev/assets/images/noted-app-img.png";
+  static const String notesAppBgUrl = "https://raw.githubusercontent.com/Chhay67/portfolio_v2/dev/assets/images/notes-app-img.png";
 
 }
