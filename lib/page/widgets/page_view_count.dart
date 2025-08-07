@@ -12,6 +12,7 @@ class PageViewCount extends ConsumerWidget {
     final pageViewState = ref.watch(pageViewCountStreamProvider);
     return pageViewState.when(
       data: (count) => Badge(
+        alignment: Alignment.center,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         label: Text(count.toString(),style: context.smallTextStyle.copyWith(fontSize: 10),),
 
