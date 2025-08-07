@@ -31,11 +31,10 @@ class CachedNetworkImageWidget extends StatelessWidget {
         constraints:  BoxConstraints(
             maxHeight: height,
             maxWidth: width),
-        width: width,
-        height: height,
+
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image:  DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
+          image:  DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.fitWidth),
         ),
         child: child,
       );
@@ -49,17 +48,13 @@ class CachedNetworkImageWidget extends StatelessWidget {
         constraints:  BoxConstraints(
             maxHeight: height,
             maxWidth: width),
-        width: width,
-        height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
+          image: DecorationImage(image: imageProvider, fit: BoxFit.fitWidth),
         ),
         child: child,
       ),
-      height: height,
-      width: width,
-      fit: BoxFit.cover,
+      fit: BoxFit.fitWidth,
       filterQuality: FilterQuality.high,
       maxHeightDiskCache: height.toInt(),
       maxWidthDiskCache: width.toInt(),
@@ -76,6 +71,8 @@ class CachedNetworkImageWidget extends StatelessWidget {
       memCacheHeight: height.toInt(),
       memCacheWidth: width.toInt(),
       errorWidget: (context, url, error) => Container(
+        width: width,
+        height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           border: Border.all(width: 1,color: Theme.of(context).dividerColor),

@@ -62,7 +62,6 @@ flutter:
 
   assets:
     - assets/icon/
-    - assets/images/
     - fonts/poppins/
     - fonts/raleways/
 
