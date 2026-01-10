@@ -23,6 +23,18 @@ final appRouteProvider = Provider<GoRouter>((ref) {
         FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
     ],
     initialLocation: RouteEnum.home.path,
+    redirect: (context, state) {
+      // If URL has any query (?fbclid=..., etc.), remove it and keep only the path
+      if (state.uri.hasQuery) {
+        final clean = Uri(
+          path: state.uri.path.isEmpty ? RouteEnum.home.path : state.uri.path,
+          fragment: state.uri.fragment, // keep # if you use it
+        );
+        return clean.toString(); // example: "/work" instead of "/work?fbclid=..."
+      }
+      return null;
+    },
+
     routes: [
       ShellRoute(
         navigatorKey: _shellNavigatorKey,
@@ -66,6 +78,12 @@ final appRouteProvider = Provider<GoRouter>((ref) {
         ],
       ),
     ],
+    errorBuilder: (context, state) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        context.go(RouteEnum.home.path); // "/"
+      });
+      return const SizedBox.shrink();
+    },
   );
 });
 
